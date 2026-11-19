@@ -48,7 +48,13 @@ class BinaryTree:
             print(no.data)
             self.printPreOrdem(no.left)
             self.printPreOrdem(no.right)
-    
+
+    #imprime os nós da arvore em ordem (esquerda, raiz, direita)
+    def printEmOrdem(self, no):
+        if no != None:
+            self.printEmOrdem(no.left)
+            print(no.data)
+            self.printEmOrdem(no.right)
     
 tree = BinaryTree()
 tree.insert(8)
@@ -57,3 +63,6 @@ tree.insert(15)
 
 print("Pre-ordem:")
 tree.printPreOrdem(tree.root)
+
+print("Em-ordem:")
+tree.printEmOrdem(tree.root)
