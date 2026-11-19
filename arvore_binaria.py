@@ -42,12 +42,18 @@ class BinaryTree:
     def isEmpty(self):
         return self.root == None
     
+    #imprime os nós da arvore em pre-ordem (raiz, esquerda, direita)
+    def printPreOrdem(self, no):
+        if no != None:
+            print(no.data)
+            self.printPreOrdem(no.left)
+            self.printPreOrdem(no.right)
+    
     
 tree = BinaryTree()
 tree.insert(8)
 tree.insert(3)
 tree.insert(15)
 
-print(tree.root.data)
-print(tree.root.left.data)
-print(tree.root.right.data)
+print("Pre-ordem:")
+tree.printPreOrdem(tree.root)
